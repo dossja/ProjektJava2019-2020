@@ -5,21 +5,33 @@
  */
 package Model;
 
-import java.util.Stack;
+import Model.Enum;
+import java.util.*;
+import static java.util.Collections.*;
 
 /**
  * Class Model is a class, that converts numbers from system to system
  * It is an attempt to implement Model from MVC architecture
  * 
  * @author Dominika Matyja
- * @version 1.0
+ * @version 2.0
  */
 public class Model {
-    final private String number;
-    final private String method;
+    public String number;
+    public String method;
     private String output="";
     
-    final private String d2b = "d2b";
+    final private String d2b = Enum.d2b.dana();
+    
+    /**
+     * Argumentless constructor used for creating the Tests
+     */
+    
+    public Model()
+    {
+        method = " ";
+        number = "0";
+    }
     
     /**
      * Function that saves the users answers into class members, to use them later
@@ -37,7 +49,7 @@ public class Model {
      * Function that checks the users choosen function and returns true or false
      * If answer is 'd2b' than the Decimal to Binary function will be used
      * For any other answer, the Binary to Decimal function will be used
-     * @return 
+     * @return true or false
      */
     
     public boolean getFunc()
@@ -70,7 +82,7 @@ public class Model {
      * @param number that is checked
      * @throws MyException when number is lower than 0
      */
-    
+
     public void numberCheck(int number) throws MyException
     {
         if(number < 0)
@@ -137,8 +149,10 @@ public class Model {
         {
             System.err.println(ex);
         }
-        /* Creating stack for remebering partial resuts*/
-        Stack<Integer> stack = new Stack<Integer>();
+        /* Creating list without defining the type,
+        in order to use @SuppressWarnings later*/
+        List st = new ArrayList();
+
         /* Initializing temporary value to help with calculations*/
         int tmp;
         
@@ -149,14 +163,22 @@ public class Model {
         while (numberT != 0)
         {
           tmp = numberT % 2;
-          stack.push(tmp);
+          /* Temporary value for String value of Modulus*/
+          String tmpNew = String.valueOf(tmp);
+          /* Adding value into our "stack"*/
+          st.add(tmpNew);
           numberT = numberT / 2;
         } 
-    
-        /* Printing the stack and removing stack elements until it's empty*/
-        while (!(stack.isEmpty() ))
+        /* Creating new String ArrayList to hold the st values*/
+        @SuppressWarnings("unchecked")
+        List <String> stSafe  = (List <String>) st;
+        /* Reversing the values, to make it easier to use in foreach sentence*/
+        reverse(stSafe);
+        
+        /* Printing the whole stack using foreach*/
+        for(String x:stSafe)
         {
-          output += stack.pop();
+            output += x;
         }
     }
     
@@ -167,5 +189,9 @@ public class Model {
     public String getResult()
     {
         return output;
+    }
+
+    private void remove(List<String> stSafe, int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

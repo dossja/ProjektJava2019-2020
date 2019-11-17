@@ -12,7 +12,7 @@ import java.util.Scanner;
  * An attempt to create View form MVC architecture
  *
  * @author Dominika Matyja
- * @version 1.0
+ * @version 2.0
  */
 public class View {
     

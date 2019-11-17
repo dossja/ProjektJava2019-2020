@@ -13,7 +13,7 @@ import View.View;
  * An attempt to create Controller from MVC architecture
  *
  * @author Dominika Matyja
- * @version 1.0
+ * @version 2.0
  */
 public class Controller {
     final private Model model;
@@ -21,7 +21,7 @@ public class Controller {
     
     /**
      * Constructor for the comunication between two classes
-     * @param args 
+     * @param args args from the console
      */
     public Controller(String[] args)
     {
