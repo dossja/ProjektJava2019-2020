@@ -5,7 +5,7 @@
  */
 package project;
 
-import Controller.Controller;
+import controller.Controller;
 
 /**
  * Main class for starting the program
