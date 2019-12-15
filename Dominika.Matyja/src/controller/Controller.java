@@ -13,7 +13,7 @@ import view.View;
  * An attempt to create Controller from MVC architecture
  *
  * @author Dominika Matyja
- * @version 2.0
+ * @version 2.1
  */
 public class Controller {
     final private Model model;
@@ -26,9 +26,8 @@ public class Controller {
     public Controller(String[] args)
     {
         view = new View(args);
-        model = new Model(view.getNumber(), view.getMethod());
-        model.getFunc();
-        model.convert();
+        model = new Model();
+        model.convert(view.getMethod(), view.getNumber());
         view.setOutput(model.getResult());
         view.printResult();
     }

@@ -12,7 +12,7 @@ import java.util.Scanner;
  * An attempt to create View from MVC architecture
  *
  * @author Dominika Matyja
- * @version 2.0
+ * @version 2.1
  */
 public final class View {
     
@@ -34,7 +34,7 @@ public final class View {
             method = args[0];
             number = args[1];
         }
-        catch (ArrayIndexOutOfBoundsException exception)
+        catch (ArrayIndexOutOfBoundsException ex)
         {
             getInput(args.length);
         }
@@ -48,7 +48,8 @@ public final class View {
     
     public void getInput(int lngth)
     {
-        try (Scanner scanner = new Scanner(System.in)) {
+        try (Scanner scanner = new Scanner(System.in))
+        {
             System.out.println("Write your choosen method:"
                     + "\n\tb2d - binary to decimal"
                     + "\n\td2b - decimal to binary");
@@ -74,9 +75,13 @@ public final class View {
      * @return method
      */
     
-    public String getMethod()
+    public boolean getMethod()
     {
-        return method;
+        if(method.equals("d2b"))
+            return false;
+        
+        else
+            return true;
     }
     
     /**

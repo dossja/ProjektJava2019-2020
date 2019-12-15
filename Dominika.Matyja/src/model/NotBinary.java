@@ -16,6 +16,10 @@ package model;
 public class NotBinary extends Exception{
     NotBinary() {};
     
+    /**
+     * Constructor with one argument
+     * @param arg message with error
+     */
     NotBinary(String arg)
     {
         super(arg);

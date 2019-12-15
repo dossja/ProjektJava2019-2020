@@ -9,7 +9,7 @@ package model;
  * EnumBinary for checking if the number is binary (contains only "0" and "1"
  * 
  * @author Dominika Matyja
- * @version 2.0
+ * @version 2.1
  */
 
 public enum EnumBinary {
@@ -23,7 +23,7 @@ public enum EnumBinary {
      * @return String value
      */
     
-    public String liczba()
+    public String number()
     {
         switch(this)
         {

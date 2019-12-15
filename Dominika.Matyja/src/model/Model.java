@@ -13,21 +13,19 @@ import static java.util.Collections.*;
  * It is an attempt to implement Model from MVC architecture
  * 
  * @author Dominika Matyja
- * @version 2.0
+ * @version 2.1
  */
+
 public class Model {
     /** number is a number that is written in console by an user*/
     public String number;
     
-    /** method is a choosen by an user method of conversion*/
-    public String method;
-    
     /** output is an output of converison*/
     private String output = "";
     
-    /** d2b is a String value, that is used, to check the method (if it's
-        equal to this String).*/
-    static String d2b = "d2b";
+    /** boolean value for side of conversion
+        true - Binary to Decimal, false - Decimal to Binary*/
+    public boolean sideB2D;
     
     /**
      * Argumentless constructor used for creating the Tests
@@ -35,8 +33,8 @@ public class Model {
     
     public Model()
     {
-        method = " ";
-        number = "0";
+        sideB2D = true;
+        number = "";
     }
     
     /**
@@ -45,34 +43,57 @@ public class Model {
      * @param met method of conversion
      */
     
-    public Model(String num, String met)
+    public Model(String num, boolean met)
     {
-        method = met;
         number = num;
+        sideB2D = met;
     }
     
     /**
-     * Function that checks the users choosen function and returns true or false
-     * If answer is 'd2b' than the Decimal to Binary function will be used
-     * For any other answer, the Binary to Decimal function will be used
-     * @return true or false
+     * Method for changing the side of conversion
+     * Used for tests
+     * @return true or false, depends of the side
      */
     
-    public boolean getFunc()
+    public boolean changeSide()
     {
-        if(!method.equals(d2b))
-            return true;
+        if (sideB2D)
+        {
+            sideB2D = false;
+        }
+        
         else
-            return false;
+        {
+            sideB2D = true;
+        }
+        
+        return this.sideB2D;
+    }
+    
+    /**
+     * Method for returning the side of conversion
+     * @return boolean side of converison
+     */
+    
+    public boolean getSide()
+    {
+        return this.sideB2D;
     }
     
     /**
      * Function for choosing the correct function for our conversion
+     * @param met method of conversion
+     * @param num number to convert
+     * @throws NegativeNumber if number is less than 0
+     * @throws NotBinary if for b2d conversion, the input number contains non
+     * binary digits
      */
     
-    public void convert()
+    public void convert(boolean met, String num) throws NegativeNumber, NotBinary
     {
-        if(getFunc())
+        sideB2D = met;
+        number = num;
+        if(sideB2D)
         {
             bin2Dec();
         }
@@ -92,8 +113,7 @@ public class Model {
     public void numberCheck(int number) throws NegativeNumber
     {
         if(number < 0)
-            throw new NegativeNumber("Negative number! "
-                    + "You're going to get false result");
+            throw new NegativeNumber();
     }
 
     /**
@@ -118,8 +138,8 @@ public class Model {
         
         for(String i : list)
         {
-            if(i.equals(EnumBinary.zero.liczba())
-                    || i.equals(EnumBinary.one.liczba()))
+            if(i.equals(EnumBinary.zero.number())
+                    || i.equals(EnumBinary.one.number()))
             {
             }
             else
@@ -174,6 +194,7 @@ public class Model {
     
     public void dec2Bin()
     {
+        output = "";
         /** Initializing temporary number that is an integer*/
         int numberT = 0;
         

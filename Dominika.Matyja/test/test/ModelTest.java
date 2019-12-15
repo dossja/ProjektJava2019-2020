@@ -15,7 +15,7 @@ import org.junit.Test;
  * Class to test the Model class methods.
  * 
  * @author Dominika Matyja
- * @version 2.0
+ * @version 2.1
  */
 public class ModelTest {
     /**
@@ -40,9 +40,9 @@ public class ModelTest {
     {
         try
         {
-            boolean otp = model.getFunc();
-            model.method = "db2";
-            assertNotEquals("Method is not changed!", model.getFunc(), otp);
+            boolean otp = true;
+            model.changeSide();
+            assertNotEquals("Method is not changed!", model.getSide(), otp);
         }
         catch(Exception ex)
         {
@@ -58,10 +58,10 @@ public class ModelTest {
     {
         try
         {
-            model.method = "db2";
-            boolean otp = model.getFunc();
-            model.method = " ";
-            assertNotEquals("Method is not changed!", model.getFunc(), otp);
+            model.sideB2D = false;
+            boolean otp = model.getSide();
+            model.changeSide();
+            assertNotEquals("Method is not changed!", model.getSide(), otp);
         }
         catch(Exception ex)
         {
@@ -78,9 +78,9 @@ public class ModelTest {
     {
         try
         {
-            model.method = "db2";
-            boolean otp = model.getFunc();
-            assertEquals("Method is different!", otp, model.method);
+            model.changeSide();
+            boolean otp = model.getSide();
+            assertEquals("Method is different!", otp, model.sideB2D);
         }
         catch(Exception ex)
         {
@@ -90,59 +90,44 @@ public class ModelTest {
         try
         {
             model.number = "";
-            model.convert();
-            assertEquals("This conversion should return an empty String",
-                    model.getResult(), "");
+            model.convert(false, model.number);
+            fail("Converting empty string fails! Exception!");
         }
-        catch (NumberFormatException ex)
-        {
-            fail("Converting empty string fails!");
-        }
+        catch(Exception ex)
+        { }
         
         try
         {
             model.number = null;
-            model.convert();
-            assertEquals("This conversion should return an empty String",
-                    model.getResult(), "");
+            model.convert(false, model.number);
+            fail("Converting null value fails! Exception!");
         }
-        catch (NumberFormatException ex)
-        {
-            fail("Converting null value fails!");
-        }
+        catch (Exception ex)
+        { }
         
         try
         {
             model.number = "2";
-            model.convert();
+            model.convert(false, model.number);
             assertEquals("This conversion should return 10",
                     model.getResult(), "10");
         }
-        catch (NumberFormatException ex)
+        catch (Exception ex)
         {
-            fail("Converting dec 2 to bin 10 fails!");
+            fail("Converting dec 2 to bin 10 fails! " + ex);
         }      
         
-        try
-        {
-            model.number = "-2";
-            model.convert();
-            fail("An exception should have been thrown because of non positive number!");
-        }
-        catch (NumberFormatException ex)
-        {
-        }
         
         try
         {
             model.number = "999";
-            model.convert();
+            model.convert(false, model.number);
             assertEquals("This conversion should return 11 1110 0111",
-                    model.getResult(), "11 1110 0111");
+                    model.getResult(), "1111100111");
         }
-        catch (NumberFormatException ex)
+        catch (Exception ex)
         {
-            fail("Converting dec 999 to bin 11 1110 0111 fails!");
+            fail("Converting dec 999 to bin 11 1110 0111 fails! " + ex);
         }
     }
     
@@ -154,81 +139,46 @@ public class ModelTest {
     {
         try
         {
-            model.method = "";
-            boolean otp = model.getFunc();
-            assertEquals("Method is different!", otp, model.method);
+            model.sideB2D = true;
+            boolean otp = model.getSide();
+            assertEquals("Method is different!", otp, model.sideB2D);
         }
         catch(Exception ex)
         {
-            fail("Method haven't changed into b2d!");
+            fail("Method haven't changed into b2d! " + ex);
         }
-        
-        try
-        {
-            model.number = "";
-            model.convert();
-            assertEquals("This conversion should return an empty String",
-                    model.getResult(), "");
-        }
-        catch (NumberFormatException ex)
-        {
-            fail("Converting empty string fails!");
-        }
-        
+                
         try
         {
             model.number = null;
-            model.convert();
-            assertEquals("This conversion should return an empty String",
-                    model.getResult(), "");
+            model.convert(true, model.number);
+            fail("Converting null value fails! NotBinary exception");
         }
-        catch (NumberFormatException ex)
-        {
-            fail("Converting null value fails!");
-        }
+        catch (Exception ex)
+        { }
         
         try
         {
             model.number = "10";
-            model.convert();
+            model.convert(true, model.number);
             assertEquals("This conversion should return 2",
                     model.getResult(), "2");
         }
-        catch (NumberFormatException ex)
+        catch (Exception ex)
         {
-            fail("Converting bin 10 to dec 2 fails!");
+            fail("Converting bin 10 to dec 2 fails! " + ex);
         }     
-        
-        try
-        {
-            model.number = "-1";
-            model.convert();
-            fail("An exception should have been thrown because of non positive number!");
-        }
-        catch (NumberFormatException ex)
-        {
-        }
-        
+                
         try
         {
             model.number = "1111100111";
-            model.convert();
+            model.convert(true, model.number);
             assertEquals("This conversion should return 999",
-                    model.getResult(), "9");
+                    model.getResult(), "999");
         }
-        catch (NumberFormatException ex)
+        catch (Exception ex)
         {
-            fail("Converting bin 11 1110 0111 to dec 999 fails!");
-        }
-        
-        try
-        {
-            model.number = "222";
-            model.convert();
-            fail("An exception should have been thrown beacuse of non binary number!");
-        }
-       catch(NumberFormatException ex)
-        {
+            fail("Converting bin 11 1110 0111 to dec 999 fails! " + ex);
         }
     }
 }

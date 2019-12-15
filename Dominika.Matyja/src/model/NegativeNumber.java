@@ -10,11 +10,15 @@ package model;
  * It is called when negative number is used
  *
  * @author Dominika Matyja
- * @version 2.0
+ * @version 2.1
  */
 public class NegativeNumber extends Exception{
     NegativeNumber() {};
     
+    /**
+     * Constructor with one argument
+     * @param arg message with error
+     */
     NegativeNumber(String arg)
     {
         super(arg);

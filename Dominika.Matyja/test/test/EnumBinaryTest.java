@@ -17,25 +17,30 @@ import static org.junit.Assert.*;
  * Test for enum class called EnumBinary
  *
  * @author Dominika Matyja
- * @version 2.0
+ * @version 2.1
  */
 public class EnumBinaryTest {
-    
+
+    /** Constructor for tests*/
     public EnumBinaryTest() {
     }
     
+    /** Set up for class with addnotation*/
     @BeforeClass
     public static void setUpClass() {
     }
     
+    /** Tear down for class*/
     @AfterClass
     public static void tearDownClass() {
     }
     
+    /** Set up before tests*/
     @Before
     public void setUp() {
     }
     
+    /** Tear down after tests*/
     @After
     public void tearDown() {
     }
@@ -70,18 +75,18 @@ public class EnumBinaryTest {
     }
 
     /**
-     * Test of liczba method, of class EnumBinary.
+     * Test of number method, of class EnumBinary.
      */
     @Test
-    public void testLiczba() {
-        System.out.println("Test of method \"liczba\" of EnumBinary");
+    public void testNumber() {
+        System.out.println("Test of method \"number\" of EnumBinary");
 
-        String expResult = "zero";
-        String result = EnumBinary.zero.liczba();
+        String expResult = "0";
+        String result = EnumBinary.zero.number();
         assertEquals(expResult, result);
         
-        expResult = "one";
-        result = EnumBinary.one.liczba();
+        expResult = "1";
+        result = EnumBinary.one.number();
         assertEquals(expResult, result);
     }
     
