@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Bin2Dec Program</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id = "view">
+            <h1 id = "l_Title" style = "text-align: center"> Welcome to the Binary to Decimal converter! </h1>
+                <form action = "Convert" method = "POST" style = "text-align: center">
+                    <h4 id = "l_NumberIN" style = "text-align: center"> Binary: </h4>
+                    <input id = "viewIN" type = "text" value = "" name = "viewIN">
+                    <h4 id = "l_NumberOUT" style = "text-align: center"><br> Decimal: </h4>                    
+                    <input id = "viewOUT" type = "text" value = "" name = "viewOUT"> <br> <br>
+                    <input id = "convert" type = "submit" value = "Convert"> 
+                    <br>
+                </form>
+                
+                <form action = "Clean" method = "POST" style = "text-align: center">
+                    <h3 id = "l_Clean" style = "text-align: center"> <br> Button to clean the numbers: <br> </h3>
+                    <input id = "clean" type = "submit" value = "Clean" />
+                </form>
+                
+                <form action = "Change" method = "POST" style = "text-align: center">
+                    <h3 id = "l_Change" style = "text-align: center"> <br> Button to change the direction of conversion: <br> </h3>
+                    <input id = "change" type = "submit" value = "Change" />
+                </form>
+            
+            <div id = "error"> </div>
+            <h3 id = "l_History" style = "text-align: center">Conversion history: </h3>  
+                <form action = "Delete" method = "POST" style = "text-align: center">
+                    <input id = "delete" type = "submit" value = "Delete" />
+                </form>
+        </div>
+    </body>
+</html>
