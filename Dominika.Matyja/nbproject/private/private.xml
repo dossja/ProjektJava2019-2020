@@ -3,10 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/domka/Documents/NetBeansProjects/Project/src/Controller/Controller.java</file>
-            <file>file:/C:/Users/domka/Documents/NetBeansProjects/Project/src/project/Project.java</file>
-            <file>file:/C:/Users/domka/Documents/NetBeansProjects/Project/src/Model/Model.java</file>
-            <file>file:/C:/Users/domka/Documents/NetBeansProjects/Project/src/View/View.java</file>
+            <file>file:/C:/Users/Dossja/Documents/NetBeansProjects/Dominika.Matyja/src/java/view/RespCreator.java</file>
+            <file>file:/C:/Users/Dossja/Documents/NetBeansProjects/Dominika.Matyja/src/java/servlets/Change.java</file>
+            <file>file:/C:/Users/Dossja/Documents/NetBeansProjects/Dominika.Matyja/src/java/servlets/History.java</file>
+            <file>file:/C:/Users/Dossja/Documents/NetBeansProjects/Dominika.Matyja/src/java/model/Model.java</file>
+            <file>file:/C:/Users/Dossja/Documents/NetBeansProjects/Dominika.Matyja/src/java/servlets/Convert.java</file>
+            <file>file:/C:/Users/Dossja/Documents/NetBeansProjects/Dominika.Matyja/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/Dossja/Documents/NetBeansProjects/Dominika.Matyja/web/index.html</file>
         </group>
     </open-files>
 </project-private>
