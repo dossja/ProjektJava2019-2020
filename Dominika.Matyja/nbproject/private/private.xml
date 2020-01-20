@@ -3,10 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/domka/Documents/NetBeansProjects/Project/src/Controller/Controller.java</file>
-            <file>file:/C:/Users/domka/Documents/NetBeansProjects/Project/src/project/Project.java</file>
-            <file>file:/C:/Users/domka/Documents/NetBeansProjects/Project/src/Model/Model.java</file>
-            <file>file:/C:/Users/domka/Documents/NetBeansProjects/Project/src/View/View.java</file>
+            <file>file:/C:/Users/Dossja/Documents/NetBeansProjects/Bin2DecWebDB/src/java/view/RespCreator.java</file>
+            <file>file:/C:/Users/Dossja/Documents/NetBeansProjects/Bin2DecWebDB/src/java/servlets/History.java</file>
+            <file>file:/C:/Users/Dossja/Documents/NetBeansProjects/Bin2DecWebDB/src/java/servlets/Clean.java</file>
+            <file>file:/C:/Users/Dossja/Documents/NetBeansProjects/Bin2DecWebDB/src/java/servlets/Convert.java</file>
+            <file>file:/C:/Users/Dossja/Documents/NetBeansProjects/Bin2DecWebDB/src/java/model/Model.java</file>
+            <file>file:/C:/Users/Dossja/Documents/NetBeansProjects/Bin2DecWebDB/web/index.html</file>
         </group>
     </open-files>
 </project-private>
