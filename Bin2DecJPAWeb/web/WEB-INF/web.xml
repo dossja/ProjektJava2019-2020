@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>Change</servlet-name>
+        <servlet-class>servlets.Change</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Clean</servlet-name>
+        <servlet-class>servlets.Clean</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Convert</servlet-name>
+        <servlet-class>servlets.Convert</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>History</servlet-name>
+        <servlet-class>servlets.History</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Change</servlet-name>
+        <url-pattern>/Change</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Clean</servlet-name>
+        <url-pattern>/Clean</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Convert</servlet-name>
+        <url-pattern>/Convert</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>History</servlet-name>
+        <url-pattern>/History</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
